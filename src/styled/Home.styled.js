@@ -19,5 +19,9 @@ export const Title = styled.h1`
     border-radius: 4px;
     border: 1px solid red;
     cursor: pointer;
+    &:hover {
+      background-color: yellow;
+      color: blue;
+    }
   }
 `;
