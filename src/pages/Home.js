@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import moduleCss from "./Home.Module.scss";
-
+import { Title } from "../styled/Home.styled";
 export default class Home extends Component {
   render() {
     return (
       <div>
         Home page
+        <Title>../styled/Home.styled</Title>
         <a className={moduleCss.alink} href="http://baidu.com">
           aaaaa
         </a>

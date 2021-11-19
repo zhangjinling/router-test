@@ -39,9 +39,12 @@ function App() {
           <Route path="message1/:id/:title" element={<Message1 />}></Route>
           <Route path="message2/:hah" element={<Message2 />}></Route>
           <Route path="message3" element={<Message3 />}></Route>
+          {/* 默认路由 */}
           <Route index element={<MessageDefault />}></Route>
+          {/* 找不到的路由 */}
           <Route path="*" element={<NotFond />}></Route>
         </Route>
+        <Route path="*" element={<NotFond />}></Route>
       </Routes>
     </div>
   );

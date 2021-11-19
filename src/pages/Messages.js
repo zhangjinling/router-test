@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import { Outlet } from "react-router-dom";
-import styled from "styled-components";
-
+import { Title } from "../styled/Home.styled";
 export default class Messages extends Component {
   render() {
-    const Title = styled.h1`
-      font-size: 1.5em;
-      text-align: center;
-      color: red;
-      margin-top: 20px;
-      display: inline;
-    `;
     return (
       <div>
         <p>this is Messages header.</p>
