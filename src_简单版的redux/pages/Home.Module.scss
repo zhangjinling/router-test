@@ -1,0 +1,27 @@
+.alink {
+  color: red;
+  background-color: blue;
+}
+.list {
+  background-color: cadetblue;
+  div {
+    height: 50px;
+    color: red;
+    .edit {
+      display: inline-block;
+      width: 200px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: blue;
+    }
+  }
+}
+.edit {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: yellow;
+}
