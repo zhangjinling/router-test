@@ -4,12 +4,18 @@ const {
   addLessLoader,
   addWebpackPlugin,
   addBabelPlugin,
+  addWebpackAlias,
 } = require("customize-cra");
+const path = require("path");
+
 const px2vwBabelPlugin = require("babel-plugin-styled-components-px2vw");
 
 const AntdDayjsWebpackPlugin = require("antd-dayjs-webpack-plugin");
 
 module.exports = override(
+  addWebpackAlias({
+    "@": path.resolve(__dirname, "./src"),
+  }),
   fixBabelImports("import", {
     libraryName: "antd",
     libraryDirectory: "es",

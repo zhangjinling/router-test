@@ -1,9 +1,9 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Messages from "./pages/Messages";
-import Message1 from "./pages/messages/Message1";
-import Message2 from "./pages/messages/Message2";
-import Message3 from "./pages/messages/Message3";
+import Messages from "@/pages/Messages";
+import Message1 from "@/pages/messages/Message1";
+import Message2 from "@/pages/messages/Message2";
+import Message3 from "@/pages/messages/Message3";
 import NotFond from "./pages/NotFond";
 import Users from "./pages/Users";
 import MessageDefault from "./pages/messages/MessageDefault";
