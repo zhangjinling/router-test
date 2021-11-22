@@ -3,7 +3,10 @@ const {
   fixBabelImports,
   addLessLoader,
   addWebpackPlugin,
+  addBabelPlugin,
 } = require("customize-cra");
+const px2vwBabelPlugin = require("babel-plugin-styled-components-px2vw");
+
 const AntdDayjsWebpackPlugin = require("antd-dayjs-webpack-plugin");
 
 module.exports = override(
@@ -16,5 +19,14 @@ module.exports = override(
     javascriptEnabled: true,
     modifyVars: { "@primary-color": "#1DA57A" },
   }),
-  addWebpackPlugin(new AntdDayjsWebpackPlugin())
+  addWebpackPlugin(new AntdDayjsWebpackPlugin()),
+  addBabelPlugin([
+    px2vwBabelPlugin,
+    {
+      transformRuntime: true,
+      viewportWidth: 750,
+      // exclude: /\/src\/app\/pages\/HomePage\/Features\/GithubRepoForm/,
+      // include: /\/src\/app\/pages\/HomePage\/Features/,
+    },
+  ])
 );

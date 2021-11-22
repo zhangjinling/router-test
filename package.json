@@ -9,6 +9,7 @@
     "antd": "^4.16.13",
     "antd-dayjs-webpack-plugin": "^1.0.6",
     "babel-plugin-import": "^1.13.3",
+    "babel-plugin-styled-components-px2vw": "^1.6.0",
     "customize-cra": "^1.0.0",
     "less": "^4.1.2",
     "less-loader": "5.0.0",

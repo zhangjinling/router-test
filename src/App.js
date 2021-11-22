@@ -9,9 +9,9 @@ import Users from "./pages/Users";
 import MessageDefault from "./pages/messages/MessageDefault";
 import AntdDemo from "./pages/AntdDemo";
 import Count from "./pages/Count";
+import Mobile from "./pages/Mobile";
 
 function App() {
-
   let myObj = { title: "1111", id: 12341234 };
 
   return (
@@ -21,6 +21,7 @@ function App() {
         <Link to="/">home</Link>***
         <Link to="/count">count</Link>***
         <Link to="/users">users</Link>***
+        <Link to="/mobile">mobile</Link>***
         <Link to="/antddemo">antddemo</Link>***
         <Link to="/messages">messages</Link>***
         <Link to="/messages/message1/11/mytitle">message1-传params</Link>***
@@ -36,10 +37,11 @@ function App() {
       </div>
       <hr />
       <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/count" element={<Count />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/count" element={<Count />}></Route>
         <Route path="/users" element={<Users />}></Route>
         <Route path="/antddemo" element={<AntdDemo />}></Route>
+        <Route path="/mobile" element={<Mobile />}></Route>
         <Route path="/messages" element={<Messages />}>
           <Route path="message1/:id/:title" element={<Message1 />}></Route>
           <Route path="message2/:hah" element={<Message2 />}></Route>
