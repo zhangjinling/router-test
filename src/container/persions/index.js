@@ -9,6 +9,8 @@ class Persons extends Component {
     const name = this.nameNode.current.value;
     const age = this.ageNode.current.value;
     this.props.addPersion({ id: nanoid(), name, age });
+    this.nameNode.current.value = "";
+    this.ageNode.current.value = "";
   };
   render() {
     return (

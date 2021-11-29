@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import React, { Suspense } from "react";
 import Home from "./pages/Home";
 import Messages from "@/pages/Messages";
 import Message1 from "@/pages/messages/Message1";
@@ -11,7 +12,9 @@ import AntdDemo from "./pages/AntdDemo";
 import Count from "./container/count";
 import Mobile from "./pages/Mobile";
 import FuncCount from "./pages/FuncCount";
-import Persons from "./container/persions";
+const Persons = React.lazy(() =>
+  import(/* webpackChunkName: "persions" */ "./container/persions")
+);
 
 function App() {
   let myObj = { title: "1111", id: 12341234 };
@@ -40,25 +43,27 @@ function App() {
         <Link to="/messages/message55555">message55555（not fond）</Link>
       </div>
       <hr />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/count" element={<Count />}></Route>
-        <Route path="/persons" element={<Persons />}></Route>
-        <Route path="/countfunc" element={<FuncCount />}></Route>
-        <Route path="/users" element={<Users />}></Route>
-        <Route path="/antddemo" element={<AntdDemo />}></Route>
-        <Route path="/mobile" element={<Mobile />}></Route>
-        <Route path="/messages" element={<Messages />}>
-          <Route path="message1/:id/:title" element={<Message1 />}></Route>
-          <Route path="message2/:hah" element={<Message2 />}></Route>
-          <Route path="message3" element={<Message3 />}></Route>
-          {/* 默认路由 */}
-          <Route index element={<MessageDefault />}></Route>
-          {/* 找不到的路由 */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/count" element={<Count />}></Route>
+          <Route path="/persons" element={<Persons />}></Route>
+          <Route path="/countfunc" element={<FuncCount />}></Route>
+          <Route path="/users" element={<Users />}></Route>
+          <Route path="/antddemo" element={<AntdDemo />}></Route>
+          <Route path="/mobile" element={<Mobile />}></Route>
+          <Route path="/messages" element={<Messages />}>
+            <Route path="message1/:id/:title" element={<Message1 />}></Route>
+            <Route path="message2/:hah" element={<Message2 />}></Route>
+            <Route path="message3" element={<Message3 />}></Route>
+            {/* 默认路由 */}
+            <Route index element={<MessageDefault />}></Route>
+            {/* 找不到的路由 */}
+            <Route path="*" element={<NotFond />}></Route>
+          </Route>
           <Route path="*" element={<NotFond />}></Route>
-        </Route>
-        <Route path="*" element={<NotFond />}></Route>
-      </Routes>
+        </Routes>
+      </Suspense>
     </div>
   );
 }
