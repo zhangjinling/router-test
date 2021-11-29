@@ -11,6 +11,7 @@ import AntdDemo from "./pages/AntdDemo";
 import Count from "./container/count";
 import Mobile from "./pages/Mobile";
 import FuncCount from "./pages/FuncCount";
+import Persons from "./container/persions";
 
 function App() {
   let myObj = { title: "1111", id: 12341234 };
@@ -21,6 +22,7 @@ function App() {
         <span>导航：</span>
         <Link to="/">home</Link>***
         <Link to="/count">count</Link>***
+        <Link to="/persons">persons</Link>***
         <Link to="/countfunc">countfunc</Link>***
         <Link to="/users">users</Link>***
         <Link to="/mobile">mobile</Link>***
@@ -41,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/count" element={<Count />}></Route>
+        <Route path="/persons" element={<Persons />}></Route>
         <Route path="/countfunc" element={<FuncCount />}></Route>
         <Route path="/users" element={<Users />}></Route>
         <Route path="/antddemo" element={<AntdDemo />}></Route>
